@@ -10,15 +10,15 @@ This implementation makes use of static generics. This alows us to not use refle
             //Define a message class to send
             var msg = new Msg {Content = MagicString};
             
-            //subscribe you handlers
+            //subscribe your handlers
             DomainEvents<Msg>.Subscribe(Handler);
 
-            //maby ways to send
+            //many ways to send
             DomainEvents<Msg>.Publish(msg);
             DomainEvents.Publish(msg);
             DomainEvents.Publish(msg, typeof(Msg));
 
-            //unsubcribe when done as we are not using weakreferences internally
+            //unsubcribe when done as we are not using weak references internally
             DomainEvents<Msg>.Unsubscribe(Handler);
             
             
